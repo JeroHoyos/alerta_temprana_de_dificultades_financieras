@@ -5,6 +5,7 @@ description = "ñ"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "imbalanced-learn>=0.14.2",
     "ipykernel>=7.4.0",
     "ipywidgets>=8.1.9",
     "jupyterlab>=4.6.4",

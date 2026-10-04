@@ -11,6 +11,7 @@ dependencies = [
     "matplotlib>=3.11.2",
     "numpy>=2.5.3",
     "openpyxl>=3.1.5",
+    "optuna>=5.0.0",
     "pandas>=3.0.6",
     "plotly>=7.1.0",
     "polars>=1.44.2",
@@ -24,11 +25,24 @@ dependencies = [
     "tqdm>=4.70.1",
 ]
 
+# PyTorch con CUDA 13.0 en Windows/Linux (funciona también sin GPU NVIDIA, solo pesa más)
+# y la versión CPU en macOS, donde no hay CUDA.
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
 [[tool.uv.index]]
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
 explicit = true
 
 [tool.uv.sources]
-torch = { index = "pytorch-cpu" }
-torchvision = { index = "pytorch-cpu" }
+torch = [
+    { index = "pytorch-cu130", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]
+torchvision = [
+    { index = "pytorch-cu130", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]

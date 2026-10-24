@@ -62,8 +62,7 @@ Sí. Los modelos aprendieron con 2022-2023 y se probaron con 2024, un año que n
 - **Funciona como alerta temprana:** revisar 1 de cada 10 empresas anticipa 2 de cada 3 casos.
 - **Cada alerta vale 7 veces más** que elegir una empresa al azar (34,7 % frente a 5,2 %).
 - **Un modelo simple basta:** la regresión logística queda casi igual que la red neuronal y es más fácil de explicar.
-- **Ojo con la minería** y con las empresas que ya tienen pérdidas.
-
+  
 **Limitaciones:** solo el 42 % de las empresas aparece los 5 años, las cifras vienen redondeadas, Supersalud queda fuera y hay un solo año de prueba.
 
 ## Estructura

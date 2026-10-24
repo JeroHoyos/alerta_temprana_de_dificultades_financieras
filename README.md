@@ -13,7 +13,6 @@ Solo necesitas [uv](https://docs.astral.sh/uv/):
 
 ```bash
 uv sync
-uv run jupyter lab
 ```
 
 Ejecuta los notebooks de `notebooks/` en orden. La primera vez el CSV se descarga solo.

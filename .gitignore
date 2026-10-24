@@ -1,2 +1,9 @@
 *.venv
-*.csv
+__pycache__/
+.ipynb_checkpoints/
+.complexipy_cache/
+
+# Los datos no se versionan: el CSV original se descarga solo y los procesados se regeneran
+data/raw/*
+data/processed/*
+!.gitkeep

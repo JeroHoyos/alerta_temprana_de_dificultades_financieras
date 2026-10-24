@@ -1,7 +1,7 @@
 [project]
-name = "crecimiento-empresas-colombianas"
+name = "alerta-temprana-dificultades-financieras"
 version = "0.1.0"
-description = "ñ"
+description = "Sistema de alerta temprana de dificultades financieras para las 10.000 empresas más grandes de Colombia"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -26,6 +26,12 @@ dependencies = [
     "tqdm>=4.70.1",
 ]
 
+# Complejidad cognitiva máxima por función (complexipy)
+[tool.complexipy]
+paths = ["src"]
+max-complexity-allowed = 10
+sort = "desc"
+
 # PyTorch con CUDA 13.0 en Windows/Linux (funciona también sin GPU NVIDIA, solo pesa más)
 # y la versión CPU en macOS, donde no hay CUDA.
 [[tool.uv.index]]
@@ -46,4 +52,9 @@ torch = [
 torchvision = [
     { index = "pytorch-cu130", marker = "sys_platform == 'win32' or sys_platform == 'linux'" },
     { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]
+
+[dependency-groups]
+dev = [
+    "complexipy>=8.1.0",
 ]
